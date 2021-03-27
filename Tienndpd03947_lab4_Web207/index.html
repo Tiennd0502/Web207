@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tienndpd03947_lab4_Web207</title>
+</head>
+
+<body>
+    <div class="container-fluid" ng-app="myApp">
+        <div class="container">
+            <div class="row" ng-controller="myInfoCtrl">
+                <h2>Bài 1</h2>
+                <ul>
+                    <li>{{fulName}}</li>
+                    <li>{{birthday}}</li>
+                    <li>{{gender}}</li>
+                    <li><img src="images/{{photo}}" alt=""></li>
+                    <li>{{mark}}</li>
+                </ul>
+                <h2>Bài 2 </h2>
+                <ul>
+                    <li>{{student.fullName}}</li>
+                    <li>{{student.birthday}}</li>
+                    <li>{{student.gender}}</li>
+                    <li><img src="images/{{student.photo}}" width="200" alt=""></li>
+                    <li>{{student.mark}}</li>
+                </ul>
+                <h3>Bài 3</h3>
+                <table class="table table-light">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Hình</th>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Giới tính </th>
+                            <th>Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="student in students">
+                            <td><img src="images/{{student.photo}}" class="" width="200" alt=""></td>
+                            <td>{{student.fullName}}</td>
+                            <td>{{student.birthday}}</td>
+                            <td>{{student.gender}}</td>
+                            <td>{{student.mark}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3>Bài 4 Hình chữ nhật</h3>
+                <form method="get" action="" ng-controller="myInfoCtrl">
+                    <div class="mb-3">
+                        <label for="width" class="form-label">Chiều rộng </label>
+                        <input type="text" class="form-control" id="width" placeholder="Chiều rộng" ng-model="width">
+                    </div>
+                    <div class="mb-3">
+                        <label for="length" class="form-label">Chiều dài</label>
+                        <input type="text" class="form-control" id="length" placeholder="Chiều dài" ng-model="length">
+                    </div>
+                    <div class="mb-3">
+                        <label for="primeter" class="form-label">Chu vi </label>
+                        <div class="form-control" ng-bind="primeter"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="acreage" class="form-label">Diện tích</label>
+                        <div class="form-control" ng-bind="acreage"></div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary" ng-click="Calculate()">Tính</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/jquery-3.5.0.min.js"></script>
+    <script src="javascript/bootstrap.js"></script>
+    <script src="javascript/angular.min.js"></script>
+    <script src="javascript/js.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Tienndpd03947_lab5_Web207</title>
+</head>
+
+<body>
+	<div class="container-fluid" ng-app="myApp">
+		<div class="container">
+			<div class="row" >
+				<h3>Bài 1</h3>
+				<div class="row" ng-controller="FormCtrl">
+					<form method="get" action="" ng-controller="FormCtrl">
+						<div class="mb-3">
+							<label for="full-name" class="form-label">Họ và tên</label>
+							<input type="text" class="form-control" id="full-name" placeholder="Nhập họ và tên..." ng-model="fullName">
+						</div>
+						<div class="mb-3">
+							<label for="birthday" class="form-label">Ngày sinh(dd/mm/yyyy)</label>
+							<input type="text" class="form-control" id="birthday" placeholder="Nhập ngày sinh" ng-model="birthday">
+						</div>
+
+						<div class="mb-3">
+							<label for="mark" class="form-label">Điểm</label>
+							<input type="number" class="form-control" id="mark" placeholder="Nhập điểm..." ng-model="mark">
+						</div>
+						<div class="mb-3">
+							<button type="button" class="btn btn-primary" ng-click="Add()">Lưu lại</button>
+							<button type="result" class="btn btn-primary">Reset</button>
+						</div>
+					</form>
+				</div>
+				<div class="row" ng-controller="ShowCtrl">
+					<table class="table table-light">
+						<thead class="thead-light">
+							<tr>
+								<th>Họ tên</th>
+								<th>Ngày sinh</th>
+								<th>Điểm</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="(index,student) in students">
+								<td>{{student.fullName}}</td>
+								<td>{{student.birthday}}</td>
+								<td>{{student.mark}}</td>
+								<td>
+									<a class="btn btn-outline-success" href="#" ng-click="edit(index)" data-bs-toggle="modal" data-bs-target="#exampleModal">Sửa</a>
+									<a href="#" ng-click="delete(index)" class="btn btn-danger">Xóa</a>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+						</tfoot>
+					</table>
+					
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Cập nhật thông tin</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form method="get" action="">
+										<div class="mb-3">
+											<label for="full-name" class="form-label">Họ và tên</label>
+											<input type="text" class="form-control" id="full-name" placeholder="Nhập họ và tên..." ng-model="fullName">
+										</div>
+										<div class="mb-3">
+											<label for="birthday" class="form-label">Ngày sinh(dd/mm/yyyy)</label>
+											<input type="text" class="form-control" id="birthday" placeholder="Nhập ngày sinh" ng-model="birthday">
+										</div>
+										<div class="mb-3">
+											<label for="mark" class="form-label">Điểm</label>
+											<input type="number" class="form-control" id="mark" placeholder="Nhập điểm..." ng-model="mark">
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" ng-click="update()">Lưu thay đổi</button>
+									<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Hủy bỏ</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2 class="mt-2">Bài 5</h2>
+			<div class="row mt-3 mb-4" ng-controller="PrdCtrl">
+				<div class="col-md-3 mt-4 " ng-repeat="product in products">
+					<div class="card">
+						<div class="card-header">
+							{{product.name}}
+						</div>
+						<div class="card-body">
+							<img class="poly-prd" src="images/{{product.image}}" alt="">
+						</div>
+						<div class="card-footer">
+							{{product.price}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="javascript/jquery-3.5.0.min.js"></script>
+	<script src="javascript/bootstrap.js"></script>
+	<script src="javascript/angular.min.js"></script>
+	<script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
+	<script src="javascript/js.js"></script>
+</body>
+
+</html>

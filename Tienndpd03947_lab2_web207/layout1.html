@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienndpd03947_Lab2_web207</title>
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-pro-5.14.0-web/css/all.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="mt-4">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active text-uppercase color" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-edit"></i> Cập nhật</button>
+                    <button class="nav-link text-uppercase color" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-list"></i> Danh sách</button>
+
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title text-uppercase"><i class="fas fa-edit"></i> Nhập lương tháng 12</h5>
+                        </div>
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="inputId" class="form-label fw-bolder">Mã nhân viên</label>
+                                    <input type="text" class="form-control" id="inputId">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputName" class="form-label fw-bold">Họ và tên</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="inputState" class="form-label fw-bolder">Câu lạc bộ</label>
+                                    <select id="inputState" class="form-select">
+                                    <option selected>Đà Nẵng</option>
+                                    <option>Hà Nội</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputState" class="form-label fw-bolder">Lương</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputState" class="form-label fw-bolder">Thưởng</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputState" class="form-label fw-bolder">Phụ cấp</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="my-textarea" class="form-label fw-bolder">Ghi chú</label>
+                                    <textarea id="my-textarea" class="form-control" name="" rows="3"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-outline-dark"><i class="fas fa-save"></i> Lưu</button>
+                                    <button type="button" class="btn btn-outline-dark"><i class="fas fa-square"></i> Hủy</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title text-uppercase"><i class="fas fa-edit"></i> Bảng lương tháng 12</h5>
+                        </div>
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase" scope="col" rowspan="2">Mã NV</th>
+                                    <th class="text-uppercase" scope="col" rowspan="2">Họ và tên</th>
+                                    <th class="text-uppercase" scope="col" colspan="3">Thu nhập</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-uppercase" scope="col">Lương</th>
+                                    <th class="text-uppercase" scope="col">Thưởng</th>
+                                    <th class="text-uppercase" scope="col">Phụ cấp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">NV100</td>
+                                    <td>Nguyễn Công Phượng</td>
+                                    <td>5000000</td>
+                                    <td>500000</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">NV102</td>
+                                    <td>Pham Văn Tài Em</td>
+                                    <td>9000000</td>
+                                    <td>600000</td>
+                                    <td>1000000</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">NV103</td>
+                                    <td>Lê Huỳnh Đức</td>
+                                    <td>7000000</td>
+                                    <td>300000</td>
+                                    <td>2000000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="card-footer text-muted">
+                            Lương của cầu thủ và huấn luyện viên chuyên nghiệp
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 mb-5">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Nhập lương tháng 12</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nhập nhương tháng 12</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputId" placeholder="Mã nhân viên">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Họ và tên">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <select id="inputState" class="form-select">
+                                    <option selected>Đà Nẵng</option>
+                                    <option>Hà Nội</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Lương">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Thưởng">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Phụ cấp">
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea id="my-textarea" class="form-control" name="" rows="3" placeholder="Ghi chú"></textarea>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-save"></i> Lưu</button>
+                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i class="fas fa-square"></i> Hủy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <!-- <script type="module" src="./js/bootstrap.esm.js"></script> -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-pro-5.14.0-web/css/all.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Tienndpd03947_lab7_Web207</title>
+</head>
+
+<body>
+	<div class="container-fluid" ng-app="myApp">
+		<div class="container">
+			<h3>Bài 1 + 2 + 3 </h3>
+			<div class="" ng-controller="FormCtrl">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title text-uppercase"><i class="fas fa-edit"></i> Danh sách hàng hóa </h5>
+					</div>
+					<table class="card-body table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-uppercase">Sản phẩm</th>
+								<th class="text-uppercase">Đơn giá</th>
+								<th class="text-uppercase">Giảm giá</th>
+								<th class="text-uppercase">Ngày</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="product in products|orderBy:'-price'|limitTo:8:16">
+								<td ng-bind="product.name|uppercase"></td>
+								<td ng-bind="product.price|currency"></td>
+								<td ng-bind="product.discount|percentage:2"></td>
+								<td ng-bind="product.date|date:'MMMM-dd, yyyy'"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<h3 class="mt-3 mb-3">Bài 4 </h3>
+			<div class="" ng-controller="FilterCtrl">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title text-uppercase"><i class="fas fa-edit"></i> Danh sách hàng hóa </h5>
+					</div>
+					<table class="card-body table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-uppercase" ng-click="sortBy('name')">Sản phẩm</th>
+								<th class="text-uppercase" ng-click="sortBy('price')">Đơn giá</th>
+								<th class="text-uppercase" ng-click="sortBy('discount')">Giảm giá</th>
+								<th class="text-uppercase" ng-click="sortBy('date')">Ngày</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="product in products|orderBy:sort|limitTo:8:begin">
+								<td ng-bind="product.name|uppercase"></td>
+								<td ng-bind="product.price|currency"></td>
+								<td ng-bind="product.discount|percentage:2"></td>
+								<td ng-bind="product.date|date:'MMMM-dd, yyyy'"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="card-footer">
+						<nav aria-label="Page navigation example">
+						  <ul class="pagination justify-content-center">
+						    
+						    <li class="page-item"><a class="page-link" href="#" ng-click="first()"><i class="fas fa-hand-point-up"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="prev()"><i class="fas fa-hand-point-left"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="next()"><i class="fas fa-hand-point-right"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="last()"><i class="fas fa-hand-point-down"></i></a></li>
+						  </ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<h3 class="mt-3 mb-3">Bài 5 </h3>
+			<div class="" ng-controller="HttpCtrl">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title text-uppercase"><i class="fas fa-edit"></i> Danh sách hàng hóa </h5>
+					</div>
+					<table class="card-body table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-uppercase" ng-click="sortBy('name')">Sản phẩm</th>
+								<th class="text-uppercase" ng-click="sortBy('price')">Đơn giá</th>
+								<th class="text-uppercase" ng-click="sortBy('discount')">Giảm giá</th>
+								<th class="text-uppercase" ng-click="sortBy('date')">Ngày</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="product in products|orderBy:sort|limitTo:8:begin">
+								<td ng-bind="product.name|uppercase"></td>
+								<td ng-bind="product.price|currency"></td>
+								<td ng-bind="product.discount|percentage:2"></td>
+								<td ng-bind="product.date|date:'MMMM-dd, yyyy'"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="card-footer">
+						<nav aria-label="Page navigation example">
+						  <ul class="pagination justify-content-center">
+						    
+						    <li class="page-item"><a class="page-link" href="#" ng-click="first()"><i class="fas fa-hand-point-up"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="prev()"><i class="fas fa-hand-point-left"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="next()"><i class="fas fa-hand-point-right"></i></a></li>
+						    <li class="page-item ml-2"><a class="page-link" href="#" ng-click="last()"><i class="fas fa-hand-point-down"></i></a></li>
+						  </ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="javascript/jquery-3.5.0.min.js"></script>
+	<script src="javascript/bootstrap.js"></script>
+	<script src="javascript/angular.min.js"></script>
+	<script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
+	<script type="text/javascript" src="javascript/Prods.js"></script>
+	<script src="javascript/js.js"></script>
+</body>
+
+</html>
